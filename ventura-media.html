@@ -21,11 +21,11 @@
     </div>
     <section class="banner"><img class="banner__left" src="images/img-banner-bg.jpg" alt="monitoring"><img class="banner__right" src="images/img-banner-text.png" alt="monitoring"></section>
     <div class="container">
-      <div class="row">
+      <div class="row" id="cardInfo">
         <div class="mb-30 col-md-6 col-lg-4">
-          <div class="card"><img class="card-icon" src="images/img-sec-logo-1.png" alt="monitoring">
-            <h3 class="card-title">CANVA BASED TEMPLATES</h3>
-            <p class="card-text">All of the Templates are designed in Canva, which is a free, popular and easy to use online design software that is perfect for Social Media graphics.</p>
+          <div class="card"><img class="card-icon" v-bind:src="card_icon_src" alt="monitoring">
+            <h3 class="card-title">{{ card_title }}}</h3>
+            <p class="card-text">{{ card_text }}</p>
           </div>
         </div>
         <div class="mb-30 col-md-6 col-lg-4">
@@ -62,29 +62,29 @@
     </div>
     <footer>
       <div class="container">
-        <div class="row">
+        <div class="row" id="app">
           <div class="col-md-4">
             <ul>
-              <li>Footer Link</li>
-              <li>Footer Link</li>
+              <li>{{ message }}</li>
+              <li>{{ say("Footer") }}</li>
             </ul>
           </div>
           <div class="col-md-4">
             <ul>
-              <li>Footer Link</li>
-              <li>Footer Link</li>
+              <li>{{ message }}</li>
+              <li>{{ message }}</li>
             </ul>
           </div>
           <div class="col-md-4">
             <ul>
-              <li>Footer Link</li>
-              <li>Footer Link</li>
+              <li>{{ message }}</li>
+              <li>{{ message }}</li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="js/main.js"></script>
+    <script src="js/ventura-media.js"></script>
   </body>
 </html>
