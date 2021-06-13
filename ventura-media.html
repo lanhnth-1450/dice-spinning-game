@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Home" />
+    <meta name="keywords" content="Home" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ventura-media.css" />
+  </head>
+  <body>
+    <div class="header">Diy your dream website - free training, join now!</div>
+    <div class="topnav"><a class="active" href="#home">free training</a><a href="#news">showcase</a><a href="#contact">contact</a></div>
+    <div class="header-wrapper">
+      <div class="header-title-logo"><img src="images/img-logo-cat.png"></div>
+      <div class="header-nav">
+        <nav class="header-nav-list"><a class="header-nav-list__item" href="#">shop</a><a class="header-nav-list__item" href="#">support</a><a class="header-nav-list__item" href="#">blog</a></nav>
+      </div>
+    </div>
+    <section class="banner"><img class="banner__left" src="images/img-banner-bg.jpg" alt="monitoring"><img class="banner__right" src="images/img-banner-text.png" alt="monitoring"></section>
+    <div class="container">
+      <div class="row" id="cardInfo">
+        <div class="mb-30 col-md-6 col-lg-4">
+          <div class="card"><img class="card-icon" v-bind:src="card_icon_src" alt="monitoring">
+            <h3 class="card-title">{{ card_title }}}</h3>
+            <p class="card-text">{{ card_text }}</p>
+          </div>
+        </div>
+        <div class="mb-30 col-md-6 col-lg-4">
+          <div class="card"><img class="card-icon" src="images/img-sec-logo-2.png" alt="monitoring">
+            <h3 class="card-title">SOCIAL MEDIA READY</h3>
+            <p class="card-text">Each template pack comes with a variety of templates optimized for different Social Media platforms, you can choose which variety you want below!</p>
+          </div>
+        </div>
+        <div class="mb-30 col-md-6 col-lg-4">
+          <div class="card"><img class="card-icon" src="images/img-sec-logo-3.png" alt="team management">
+            <h3 class="card-title">TUTORIAL VIDEO</h3>
+            <p class="card-text">Never used Canva before? No worries! We've included a Canva Basics Tutorial Video, which will teach you exactly how to edit your templates.</p>
+          </div>
+        </div>
+        <div class="mb-30 col-md-6 col-lg-4">
+          <div class="card"><img class="card-icon" src="images/img-sec-logo-4.png" alt="monitoring">
+            <h3 class="card-title">CANVA BASED TEMPLATES</h3>
+            <p class="card-text">You can easily change the colors, fonts, images, and adjust any layout elements to suit your Social Media content and brand design.</p>
+          </div>
+        </div>
+        <div class="mb-30 col-md-6 col-lg-4">
+          <div class="card"><img class="card-icon" src="images/img-sec-logo-5.png" alt="monitoring">
+            <h3 class="card-title">SOCIAL MEDIA READY</h3>
+            <p class="card-text">Got a question, or having trouble editing your files? You can submit a support ticket anytime, and our support team will be happy to help!</p>
+          </div>
+        </div>
+        <div class="mb-30 col-md-6 col-lg-4">
+          <div class="card"><img class="card-icon" src="images/img-sec-logo-6.png" alt="team management">
+            <h3 class="card-title">TUTORIAL VIDEO</h3>
+            <p class="card-text">All of our Social Media Templates have a matching Squarespace Web Design Template. Check out the matching Ventura template here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row" id="app">
+          <div class="col-md-4">
+            <ul>
+              <li>{{ message }}</li>
+              <li>{{ say("Footer") }}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li>{{ message }}</li>
+              <li>{{ message }}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li>{{ message }}</li>
+              <li>{{ message }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="js/ventura-media.js"></script>
+  </body>
+</html>
