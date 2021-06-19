@@ -18,3 +18,21 @@ var cardInfo = new Vue({
     card_icon_src: 'images/img-sec-logo-1.png'
   }
 })
+
+var venSection = new Vue({
+  el: '#venSection',
+  data: {
+    counter: 0,
+    clientX: 0,
+    clientY: 0
+  },
+  methods: {
+    handleClick: function(number) {
+      this.counter += number;
+    },
+    handleMousemove: function(e) {
+      this.clientX = e.clientX;
+      this.clientY = e.clientY;
+    }
+  }
+})
