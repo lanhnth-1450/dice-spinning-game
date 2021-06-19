@@ -22,11 +22,17 @@ var cardInfo = new Vue({
 var venSection = new Vue({
   el: '#venSection',
   data: {
-    counter: 0
+    counter: 0,
+    clientX: 0,
+    clientY: 0
   },
   methods: {
     handleClick: function(number) {
       this.counter += number;
+    },
+    handleMousemove: function(e) {
+      this.clientX = e.clientX;
+      this.clientY = e.clientY;
     }
   }
 })
