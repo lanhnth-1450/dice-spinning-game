@@ -1,6 +1,7 @@
 # dice_spinning_game
 
 > A Vue.js project
+> demo 1 for VueJS learning
 
 ## Build Setup
 
