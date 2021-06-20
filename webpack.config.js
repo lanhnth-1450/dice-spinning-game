@@ -34,7 +34,10 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          // name: '[name].[ext]?[hash]'
+          name: function(file) {
+            return 'assets/[name].[ext]?[hash]';
+          }
         }
       }
     ]
