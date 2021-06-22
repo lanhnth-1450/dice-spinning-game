@@ -25,9 +25,6 @@ export default {
 </script>
 
 <style>
-  /**********************************************
-    *** Control
-    **********************************************/
   .control {
     position: absolute;
     width: 200px;
