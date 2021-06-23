@@ -7,8 +7,11 @@
         v-bind:currentPoint="currentPoint"
         v-bind:scorePlayers="scorePlayers"
       />
-      <Controls />
+      <Controls
+        v-on:handleClick="handleClick"
+      />
       <Dices />
+      <Popup />
     </div>
   </div>
 </template>
@@ -17,6 +20,7 @@
   import Players from './components/Players';
   import Controls from './components/Controls';
   import Dices from './components/Dices';
+  import Popup from './components/Popup';
   export default {
     name: "app",
     data() {
@@ -27,7 +31,12 @@
       };
     },
     components: {
-      Players, Controls, Dices
+      Players, Controls, Dices, Popup
+    },
+    methods: {
+      handleClick() {
+
+      }
     }
   };
 </script>

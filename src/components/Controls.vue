@@ -1,6 +1,6 @@
 <template>
   <div class='wrapper-control'>
-    <button class="control btn-new">
+    <button class="control btn-new" v-on:click='newGame'>
       <i class="ion-ios-plus-outline"></i>New game
     </button>
     <button class="control btn-roll">
@@ -19,6 +19,11 @@ export default {
   data() {
     return {
 
+    }
+  },
+  methods: {
+    newGame() {
+      this.$emit("handleClick")
     }
   }
 }
