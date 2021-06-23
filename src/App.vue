@@ -2,7 +2,11 @@
   <div id="app">
     <h1>Dice spinning game</h1>
     <div class="wrapper clearfix">
-      <Players />
+      <Players
+        v-bind:activePlayer="activePlayer"
+        v-bind:currentPoint="currentPoint"
+        v-bind:scorePlayers="scorePlayers"
+      />
       <Controls />
       <Dices />
     </div>
@@ -16,7 +20,11 @@
   export default {
     name: "app",
     data() {
-      return {};
+      return {
+        activePlayer: 0,
+        currentPoint: 30,
+        scorePlayers: [30, 20]
+      };
     },
     components: {
       Players, Controls, Dices
