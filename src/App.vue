@@ -10,8 +10,10 @@
       <Controls
         v-on:handleClick="handleClick"
       />
-      <Dices />
-      <Popup />
+      <Dices v-bind:dices="dices" />
+      <Popup
+        v-bind:isOpenPopup="isOpenPopup"
+        v-on:handleConfirm="handleConfirm" />
     </div>
   </div>
 </template>
@@ -25,17 +27,27 @@
     name: "app",
     data() {
       return {
+        isPlaying: false,
+        isOpenPopup: false,
         activePlayer: 0,
         currentPoint: 30,
-        scorePlayers: [30, 20]
+        scorePlayers: [30, 20],
+        dices: [1, 3]
       };
     },
     components: {
       Players, Controls, Dices, Popup
     },
     methods: {
+      handleConfirm() {
+        this.isOpenPopup = false;
+        this.isPlaying = true;
+        this.activePlayer = 0;
+        this.currentPoint = 0;
+        this.scorePlayers = [0, 0];
+      },
       handleClick() {
-
+        this.isOpenPopup = true;
       }
     }
   };
