@@ -40,11 +40,25 @@
       Players, Controls, Dices, Popup
     },
     methods: {
+      nextPlaler() {
+        this.activePlayer = this.activePlayer == 0 ? 1 : 0;
+        this.currentPoint = 0;
+      },
       handleRoleDice() {
         if(this.isPlaying) {
-          var dice1 = Math.floor(Math.random() * 6) + 1
-          var dice2 = Math.floor(Math.random() * 6) + 1
-          this.dices = [dice1, dice2]
+          var dice1 = Math.floor(Math.random() * 6) + 1;
+          var dice2 = Math.floor(Math.random() * 6) + 1;
+          this.dices = [dice1, dice2];
+
+          if(dice1 == 1 || dice2 == 1) {
+            let activePlayer = this.activePlayer;
+            setTimeout(function() {
+              alert(`Player ${activePlayer + 1} da quay trung do 1 ! Rat tiec!`);
+            }, 10)
+            this.nextPlaler();
+          } else {
+            this.currentPoint = this.currentPoint + dice1 + dice2;
+          }
         } else {
           alert("Please click 'NEW GAME'")
         }
