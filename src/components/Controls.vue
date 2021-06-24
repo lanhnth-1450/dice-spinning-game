@@ -3,7 +3,8 @@
     <button class="control btn-new" v-on:click='newGame'>
       <i class="ion-ios-plus-outline"></i>New game
     </button>
-    <button class="control btn-roll">
+    <button class="control btn-roll"
+      v-on:click="roleDice">
       <i class="ion-ios-loop"></i>Roll dice
     </button>
     <button class="control btn-hold">
@@ -24,6 +25,9 @@ export default {
   methods: {
     newGame() {
       this.$emit("handleClick")
+    },
+    roleDice() {
+      this.$emit("handleRoleDice")
     }
   }
 }

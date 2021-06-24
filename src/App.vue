@@ -9,6 +9,7 @@
       />
       <Controls
         v-on:handleClick="handleClick"
+        v-on:handleRoleDice="handleRoleDice"
       />
       <Dices v-bind:dices="dices" />
       <Popup
@@ -39,6 +40,15 @@
       Players, Controls, Dices, Popup
     },
     methods: {
+      handleRoleDice() {
+        if(this.isPlaying) {
+          var dice1 = Math.floor(Math.random() * 6) + 1
+          var dice2 = Math.floor(Math.random() * 6) + 1
+          this.dices = [dice1, dice2]
+        } else {
+          alert("Please click 'NEW GAME'")
+        }
+      },
       handleConfirm() {
         this.isOpenPopup = false;
         this.isPlaying = true;
