@@ -10,6 +10,7 @@
       <Controls
         v-on:handleClick="handleClick"
         v-on:handleRoleDice="handleRoleDice"
+        v-on:handleHoldScore="handleHoldScore"
       />
       <Dices v-bind:dices="dices" />
       <Popup
@@ -40,7 +41,23 @@
       Players, Controls, Dices, Popup
     },
     methods: {
-      nextPlaler() {
+      handleHoldScore() {
+        if(this.isPlaying) {
+          let { activePlayer, currentPoint, scorePlayers } = this;
+          let oldScore = scorePlayers[activePlayer];
+
+          let scorePlayersTemp = [...scorePlayers];
+          scorePlayersTemp[activePlayer] = oldScore + currentPoint;
+          this.scorePlayers = scorePlayersTemp;
+
+          // this.$set(scorePlayers, activePlayer, oldScore + currentPoint);
+
+          this.nextPlayer();
+        } else {
+          alert("Please click 'NEW GAME'");
+        }
+      },
+      nextPlayer() {
         this.activePlayer = this.activePlayer == 0 ? 1 : 0;
         this.currentPoint = 0;
       },
@@ -55,7 +72,7 @@
             setTimeout(function() {
               alert(`Player ${activePlayer + 1} da quay trung do 1 ! Rat tiec!`);
             }, 10)
-            this.nextPlaler();
+            this.nextPlayer();
           } else {
             this.currentPoint = this.currentPoint + dice1 + dice2;
           }

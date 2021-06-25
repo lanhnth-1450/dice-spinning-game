@@ -1,13 +1,15 @@
 <template>
   <div class='wrapper-control'>
-    <button class="control btn-new" v-on:click='newGame'>
+    <button class="control btn-new"
+      v-on:click='newGame'>
       <i class="ion-ios-plus-outline"></i>New game
     </button>
     <button class="control btn-roll"
       v-on:click="roleDice">
       <i class="ion-ios-loop"></i>Roll dice
     </button>
-    <button class="control btn-hold">
+    <button class="control btn-hold"
+      v-on:click="$emit('handleHoldScore')">
       <i class="ion-ios-download-outline"></i>Hold
     </button>
     <input type="number" placeholder="Final score" class="final-score" />
