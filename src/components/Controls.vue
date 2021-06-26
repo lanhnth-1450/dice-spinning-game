@@ -12,19 +12,28 @@
       v-on:click="$emit('handleHoldScore')">
       <i class="ion-ios-download-outline"></i>Hold
     </button>
-    <input type="number" placeholder="Final score" class="final-score" />
+    <input type="number" placeholder="Final score" class="final-score"
+      v-bind:value="valueDemo"
+      v-on:input="$emil('handleChangeFinalScore', $event)"
+    />
   </div>
 </template>
 
 <script>
 export default {
   name: 'controls',
+  props: {
+    finalScore: { type: Number, default: 0 }
+  },
   data() {
     return {
-
+      valueDemo: 100
     }
   },
   methods: {
+    handleInput(e) {
+      this.valueDemo = e.target.value;
+    },
     newGame() {
       this.$emit("handleClick")
     },

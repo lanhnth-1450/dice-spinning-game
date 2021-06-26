@@ -11,6 +11,8 @@
         v-on:handleClick="handleClick"
         v-on:handleRoleDice="handleRoleDice"
         v-on:handleHoldScore="handleHoldScore"
+        v-bind:finalScore="finalScore"
+        v-on:handleChangeFinalScore="handleChangeFinalScore"
       />
       <Dices v-bind:dices="dices" />
       <Popup
@@ -34,13 +36,17 @@
         activePlayer: 0,
         currentPoint: 30,
         scorePlayers: [30, 20],
-        dices: [1, 3]
+        dices: [1, 3],
+        finalScore: 100
       };
     },
     components: {
       Players, Controls, Dices, Popup
     },
     methods: {
+      handleChangeFinalScore(e) {
+
+      },
       handleHoldScore() {
         if(this.isPlaying) {
           let { activePlayer, currentPoint, scorePlayers } = this;
