@@ -45,7 +45,7 @@
     },
     methods: {
       handleChangeFinalScore(e) {
-
+        this.finalScore = parseInt(e.target.value);
       },
       handleHoldScore() {
         if(this.isPlaying) {
