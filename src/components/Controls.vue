@@ -12,7 +12,7 @@
       v-on:click="$emit('handleHoldScore')">
       <i class="ion-ios-download-outline"></i>Hold
     </button>
-    <input type="number" placeholder="Final score" class="final-score"
+    <input v-bind:disabled='isPlaying' type="number" placeholder="Final score" class="final-score"
       v-bind:value="finalScore"
       v-on:input="$emit('handleChangeFinalScore', $event)"
     />
@@ -23,7 +23,8 @@
 export default {
   name: 'controls',
   props: {
-    finalScore: { type: Number, default: 0 }
+    finalScore: { type: [Number, String], default: 0 },
+    isPlaying: { type: Boolean, default: false }
   },
   data() {
     return {

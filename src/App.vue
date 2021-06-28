@@ -13,6 +13,7 @@
         v-on:handleHoldScore="handleHoldScore"
         v-bind:finalScore="finalScore"
         v-on:handleChangeFinalScore="handleChangeFinalScore"
+        v-bind:isPlaying="isPlaying"
       />
       <Dices v-bind:dices="dices" />
       <Popup
@@ -45,7 +46,12 @@
     },
     methods: {
       handleChangeFinalScore(e) {
-        this.finalScore = parseInt(e.target.value);
+        var number = parseInt(e.target.value);
+        if(isNaN(number)) {
+          this.finalScore = '';
+        } else {
+          this.finalScore = number;
+        }
       },
       handleHoldScore() {
         if(this.isPlaying) {
