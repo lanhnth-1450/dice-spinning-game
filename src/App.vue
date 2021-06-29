@@ -3,6 +3,7 @@
     <h1>Dice spinning game</h1>
     <div class="wrapper clearfix">
       <Players
+        v-bind:isWinner="isWinner"
         v-bind:activePlayer="activePlayer"
         v-bind:currentPoint="currentPoint"
         v-bind:scorePlayers="scorePlayers"
@@ -36,13 +37,24 @@
         isOpenPopup: false,
         activePlayer: 0,
         currentPoint: 30,
-        scorePlayers: [30, 20],
+        scorePlayers: [0, 0],
         dices: [1, 3],
-        finalScore: 100
+        finalScore: 10
       };
     },
     components: {
       Players, Controls, Dices, Popup
+    },
+    computed: {
+      isWinner() {
+        let { scorePlayers, finalScore } = this;
+
+        if(scorePlayers[0] >= finalScore || scorePlayers[1] >= finalScore) {
+          this.isPlaying = false;
+          return true;
+        }
+        return false;
+      }
     },
     methods: {
       handleChangeFinalScore(e) {
@@ -64,7 +76,9 @@
 
           // this.$set(scorePlayers, activePlayer, oldScore + currentPoint);
 
-          this.nextPlayer();
+          if (!this.isWiner()) {
+            this.nextPlayer();
+          }
         } else {
           alert("Please click 'NEW GAME'");
         }
